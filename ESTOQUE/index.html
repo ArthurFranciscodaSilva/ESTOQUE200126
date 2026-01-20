@@ -1,0 +1,524 @@
+
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>G-LAB PEPTIDES - Estoque Oficial</title>
+        <style>
+            body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; margin: 0; padding: 20px; }
+            .container { max-width: 1100px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+            .header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #e1e8ed; }
+            .logo { max-width: 280px; height: auto; }
+            .search-container { margin-bottom: 25px; }
+            .search-box { width: 100%; padding: 15px; border: 2px solid #004a99; border-radius: 10px; font-size: 16px; outline: none; transition: 0.3s; }
+            table { width: 100%; border-collapse: collapse; }
+            th { background: #004a99; color: white; padding: 18px 12px; text-align: left; text-transform: uppercase; font-size: 13px; }
+            td { padding: 15px 12px; border-bottom: 1px solid #f0f0f0; font-size: 14px; color: #333; }
+            tr:hover { background: #f8faff; }
+            .status-disponivel { color: #27ae60; font-weight: bold; background: #eafaf1; padding: 6px 15px; border-radius: 20px; font-size: 12px; border: 1px solid #27ae60; }
+            .status-espera { color: #d35400; font-weight: bold; background: #fef5e7; padding: 6px 15px; border-radius: 20px; font-size: 12px; border: 1px solid #d35400; }
+            .sku { font-family: monospace; color: #7f8c8d; background: #f4f6f7; padding: 3px 6px; border-radius: 4px; }
+            .preco { font-weight: 700; color: #004a99; font-size: 15px; }
+            .footer { text-align: center; margin-top: 40px; color: #95a5a6; font-size: 13px; border-top: 1px solid #eee; padding-top: 20px; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <img src="1.png" alt="G-LAB PEPTIDES" class="logo">
+                <h2 style="color: #004a99; margin-top: 10px;">Inventário de Peptídeos</h2>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="inputBusca" class="search-box" onkeyup="filtrar()" placeholder="Pesquisar por produto ou código SKU...">
+            </div>
+
+            <table id="tabelaEstoque">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Vol/Medida</th>
+                        <th>SKU (Código)</th>
+                        <th>Status</th>
+                        <th>Preço Unitário</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong>5-Amino</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0018</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 329,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>5-Amino Oral</strong></td>
+                        <td>50 MG</td>
+                        <td><span class="sku">IN0019</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 749,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>AICAR</strong></td>
+                        <td>50 MG</td>
+                        <td><span class="sku">IN0036</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 383,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>AOD 9604</strong></td>
+                        <td>5 MG</td>
+                        <td><span class="sku">IN0037</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 233,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>ARA 290</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0023</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 353,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Bacteriostic Water</strong></td>
+                        <td>10 ML</td>
+                        <td><span class="sku">IN0047</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">30</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Bacteriostic Water</strong></td>
+                        <td>30 ML</td>
+                        <td><span class="sku">IN0047</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 90,00</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>BPC-157</strong></td>
+                        <td>5 MG</td>
+                        <td><span class="sku">IN0031</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 317,94</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>BPC-157 Oral</strong></td>
+                        <td>500 MG</td>
+                        <td><span class="sku">IN0032</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 1.019,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>CJC-1295</strong></td>
+                        <td>2 MG</td>
+                        <td><span class="sku">IN0005</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 185,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>CJC-1295 + Ipamorelin</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0006</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 461,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>DSIP</strong></td>
+                        <td>5 MG</td>
+                        <td><span class="sku">IN0028</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 263,34</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Epithalon</strong></td>
+                        <td>50 MG</td>
+                        <td><span class="sku">IN0002</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 659,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>GHK-Cu</strong></td>
+                        <td>50 MG</td>
+                        <td><span class="sku">IN0003</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 323,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>GHK-Cu</strong></td>
+                        <td>100 MG</td>
+                        <td><span class="sku">IN0003</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 461,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>GHRP-6</strong></td>
+                        <td>5 MG</td>
+                        <td><span class="sku">IN0007</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 155,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>GLOW (GHK-Cu 50mg
++ BPC-157 10mg + TB- 500 10mg)</strong></td>
+                        <td> MG</td>
+                        <td><span class="sku">IN0053</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 720,00</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>HCG</strong></td>
+                        <td>5000ui </td>
+                        <td><span class="sku">IN0016</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 263,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Hemp Oil</strong></td>
+                        <td>60 ML</td>
+                        <td><span class="sku">IN0045</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 119,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Hexarelin</strong></td>
+                        <td>2 MG</td>
+                        <td><span class="sku">IN0009</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 316,14</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>HGH Fragment 176-191</strong></td>
+                        <td>2 MG</td>
+                        <td><span class="sku">IN0008</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 276,54</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Hyaluronic Acid 2% + GHK</strong></td>
+                        <td>60 ML</td>
+                        <td><span class="sku">IN0054</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 395,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>IGF DES</strong></td>
+                        <td>2 MG</td>
+                        <td><span class="sku">IN0010</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 455,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>IGF-1 LR3</strong></td>
+                        <td>2 MG</td>
+                        <td><span class="sku">IN0015</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 653,94</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Ipamorelin</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0011</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 419,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Kisspeptin</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0027</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 329,34</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>KPV</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0001</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 335,94</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>L-Carnitine</strong></td>
+                        <td>500 MG</td>
+                        <td><span class="sku">IN0041</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 263,34</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Lipo C 120</strong></td>
+                        <td>120 MG</td>
+                        <td><span class="sku">IN0043</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 263,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Lipo C 425</strong></td>
+                        <td>425 MG</td>
+                        <td><span class="sku">IN0044</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 329,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>LL-37</strong></td>
+                        <td>5 MG</td>
+                        <td><span class="sku">IN0017</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 461,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Melanotan 1</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0029</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 263,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Melanotan 2</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0030</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 263,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Methylene Blue</strong></td>
+                        <td>60 ML</td>
+                        <td><span class="sku">IN0046</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 119,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>MK-677</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0012</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 593,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>MOTS-c</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0021</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 461,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>NAD+</strong></td>
+                        <td>100 MG</td>
+                        <td><span class="sku">IN0035</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 287,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Oxytocin</strong></td>
+                        <td>5 MG</td>
+                        <td><span class="sku">IN0004</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 227,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Pinealon</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0024</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 388,74</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>PT-141 Bremelanotide</strong></td>
+                        <td> </td>
+                        <td><span class="sku">IN0048</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 305,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Retatrutide</strong></td>
+                        <td>5 MG</td>
+                        <td><span class="sku">IN00</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">350</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Retatrutide</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0038</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 653,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Retatrutide</strong></td>
+                        <td>30 MG</td>
+                        <td><span class="sku">IN0038</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 2.310,00</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Selank</strong></td>
+                        <td>5 MG</td>
+                        <td><span class="sku">IN0025</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 251,94</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Semaglutide</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0039</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 593,34</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Semax</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0026</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 251,94</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Sermorelin</strong></td>
+                        <td>5 MG</td>
+                        <td><span class="sku">IN0013</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 353,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>SLU PP</strong></td>
+                        <td>500 MG</td>
+                        <td><span class="sku">IN0020</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 749,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>SS-31</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0022</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 329,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>TB-500</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0033</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 480,00</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>TB-500 + BPC blend</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0034</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 540,00</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Tesamorelin</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0014</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 497,40</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Tirzepatide</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0040</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 652,74</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Tirzepatide</strong></td>
+                        <td>30 MG</td>
+                        <td><span class="sku">IN0040</span></td>
+                        <td><span class="status-disponivel">DISPONÍVEL</span></td>
+                        <td class="preco">R$ 2.046,00</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>Vitamin B-12</strong></td>
+                        <td>10 MG</td>
+                        <td><span class="sku">IN0042</span></td>
+                        <td><span class="status-espera">EM ESPERA</span></td>
+                        <td class="preco">R$ 263,40</td>
+                    </tr>
+        
+                </tbody>
+            </table>
+            <div class="footer">
+                <p><strong>G-LAB PEPTIDES</strong> [cite: 3]</p>
+                <p>Website: <a href="https://glabpeptides.com/" style="color:#004a99;">glabpeptides.com</a> [cite: 4, 8] | Contato: +1 (774) 622-2523 [cite: 5, 9]</p>
+            </div>
+        </div>
+
+        <script>
+        function filtrar() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("inputBusca");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tabelaEstoque");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) {
+                var mostrar = false;
+                var colunas = tr[i].getElementsByTagName("td");
+                for (var j = 0; j < colunas.length; j++) {
+                    if (colunas[j]) {
+                        txtValue = colunas[j].textContent || colunas[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            mostrar = true;
+                            break;
+                        }
+                    }
+                }
+                tr[i].style.display = mostrar ? "" : "none";
+            }
+        }
+        </script>
+    </body>
+    </html>
+    
